@@ -1,0 +1,22 @@
+{
+  "name": "startup-actionherojs",
+  "version": "1.0.0",
+  "description": "ActionHero.JS Secure + Fast Startup Project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raydvard/startup-actionherojs.git"
+  },
+  "author": "Fahim Uddin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/raydvard/startup-actionherojs/issues"
+  },
+  "homepage": "https://github.com/raydvard/startup-actionherojs#readme",
+  "dependencies": {
+    "actionhero": "^19.2.2"
+  }
+}
