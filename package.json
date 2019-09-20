@@ -1,22 +1,42 @@
 {
-  "name": "startup-actionherojs",
-  "version": "1.0.0",
-  "description": "ActionHero.JS Secure + Fast Startup Project",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "author": "Fahim Uddin <raydvard@gmail.com>",
+  "name": "startup-actionherojs-project",
+  "description": "Startup Secure + Configured ActionHero.JS Project",
+  "version": "0.1.0",
+  "engines": {
+    "node": ">=8.0.0"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/raydvard/startup-actionherojs.git"
-  },
-  "author": "Fahim Uddin",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/raydvard/startup-actionherojs/issues"
-  },
-  "homepage": "https://github.com/raydvard/startup-actionherojs#readme",
   "dependencies": {
-    "actionhero": "^19.2.2"
+    "actionhero": "19.2.2",
+    "ws": "latest",
+    "ioredis": "latest",
+    "winston": "latest"
+  },
+  "devDependencies": {
+    "jest": "latest",
+    "standard": "latest"
+  },
+  "scripts": {
+    "start": "actionhero start",
+    "actionhero": "actionhero",
+    "pretest": "standard",
+    "test": "jest"
+  },
+  "standard": {
+    "ignore": [
+      "public/javascript/ActionheroWebsocketClient.*"
+    ],
+    "globals": [
+      "describe",
+      "test",
+      "beforeAll",
+      "beforeEach",
+      "afterAll",
+      "afterEach",
+      "expect"
+    ]
+  },
+  "jest": {
+    "testEnvironment": "node"
   }
 }
