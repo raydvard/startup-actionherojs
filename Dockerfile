@@ -25,8 +25,8 @@ RUN git reset --hard origin/master
 # RUN npm ci --only=production
 
 # Specifying Redis Password
-RUN export REDIS_HOST=172.17.0.4
-RUN export REDIS_PASSWORD=mnxfordc
+# RUN export REDIS_HOST=172.17.0.4
+# RUN export REDIS_PASSWORD=mnxfordc
 
 # Exposing to Port (Mapping Port)
 EXPOSE 8080 5000

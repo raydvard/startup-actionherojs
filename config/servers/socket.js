@@ -1,4 +1,5 @@
 'use strict'
+const fs = require('fs');
 
 exports.default = {
   servers: {
@@ -6,9 +7,12 @@ exports.default = {
       return {
         enabled: true, //(process.env.ENABLE_TCP_SERVER !== undefined),
         // TCP or TLS?
-        secure: false,
+        secure: true,
         // Passed to tls.createServer if secure=true. Should contain SSL certificates
-        serverOptions: {},
+        serverOptions: {
+          key: fs.readFileSync('certs/private-key.pem'),
+          cert: fs.readFileSync('certs/server.pem')
+        },
         // Port or Socket
         port: 5000,
         // Which IP to listen on (use 0.0.0.0 for all)
