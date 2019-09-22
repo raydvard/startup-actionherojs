@@ -1,35 +1,30 @@
 FROM node:10.16.3-alpine
+LABEL maintainer="Fahim Uddin"
 LABEL version="1.0.0"
-LABEL author="Fahim Uddin"
 
-# Create app directory
+# Install and Update alpine-linux Packages
+RUN apk add --update nodejs nodejs-npm git
+
+# Create and SET Application Working Directory
 WORKDIR /usr/src/app
-
-# Install app dependencies
-#RUN apk add --update nodejs nodejs-npm git
-
-# Third Party Dependencies
-RUN apk add --update git
 
 # Install Project Dependencies
 RUN wget https://raw.githubusercontent.com/raydvard/startup-actionherojs/master/package.json
 RUN npm install
 
-# Clone Project Files
-RUN git init
-RUN git remote add origin https://github.com/raydvard/startup-actionherojs.git
-RUN git fetch --all
-RUN git reset --hard origin/master
-
-# For production
+# Production Environment Mode
 # RUN npm ci --only=production
 
-# Specifying Redis Password
-# RUN export REDIS_HOST=172.17.0.4
-# RUN export REDIS_PASSWORD=mnxfordc
-
-# Exposing to Port (Mapping Port)
+# Exposing Container Ports
 EXPOSE 8080 5000
 
-# Command to Start The Server
+# Git Repository Initialization
+CMD ["git", "init"]
+
+# Git Folder Merging - Origin master Merge
+CMD ["git", "remote", "add", "origin", "https://github.com/raydvard/startup-actionherojs.git"]
+CMD ["git", "fetch", "--all"]
+CMD ["git", "reset", "--hard", "origin/master"]
+
+# Starting Node Server
 CMD ["npm", "start"]
