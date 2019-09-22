@@ -29,7 +29,7 @@ RUN export REDIS_HOST=172.17.0.4
 RUN export REDIS_PASSWORD=mnxfordc
 
 # Exposing to Port (Mapping Port)
-EXPOSE 8000 5000
+EXPOSE 8080 5000
 
 # Command to Start The Server
 CMD ["npm", "start"]
