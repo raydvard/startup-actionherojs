@@ -18,7 +18,8 @@ RUN npm install
 # Clone Project Files
 RUN git init
 RUN git remote add origin https://github.com/raydvard/startup-actionherojs.git
-RUN git pull origin master
+RUN git fetch --all
+RUN git reset --hard origin/master
 
 # For production
 # RUN npm ci --only=production
