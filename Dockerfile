@@ -23,12 +23,5 @@ RUN dos2unix docker-entrypoint.sh
 # Exposing Container Ports
 EXPOSE 8080 5000
 
-# CMD ["wget", "https://raw.githubusercontent.com/raydvard/startup-actionherojs/master/docker-entrypoint.sh"]
-# CMD ["chmod", "+x", "docker-entrypoint.sh"]
-# CMD ["dos2unix", "docker-entrypoint.sh"]
-
 # Git Repository Initialization
 ENTRYPOINT ["/usr/src/app/docker-entrypoint.sh"]
-
-# Starting Node Server
-# CMD ["npm", "start"]
