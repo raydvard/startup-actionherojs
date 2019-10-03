@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 echo "--"
 echo "-- Initializing repo & pulling from remote"

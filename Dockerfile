@@ -19,5 +19,8 @@ RUN npm install
 # Exposing Container Ports
 EXPOSE 8080 5000
 
+# Setting the permission
+RUN chmod +x /docker-entrypoint.sh
+
 # Git Repository Initialization & Start The Application
-ENTRYPOINT ["docker-entrypoint.sh"]
+ENTRYPOINT ["/docker-entrypoint.sh"]
