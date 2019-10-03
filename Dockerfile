@@ -21,4 +21,4 @@ RUN npm install
 EXPOSE 8080 5000
 
 # Git Repository Initialization & Start The Application
-ENTRYPOINT ["docker-entrypoint.sh"]
+ENTRYPOINT ["/usr/src/app/docker-entrypoint.sh"]
