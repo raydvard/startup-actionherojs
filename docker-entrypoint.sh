@@ -5,7 +5,7 @@ echo "-- Initializing repo & pulling from git repo"
 echo "--"
 
 git init
-git remote add origin https://github.com/raydvard/startup-actionherojs.git --config core.autocrlf=input
+git remote add origin https://github.com/raydvard/startup-actionherojs.git
 git fetch --all
 git reset --hard origin/master
 
