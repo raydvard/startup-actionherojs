@@ -11,6 +11,7 @@ WORKDIR /usr/src/app
 # Install Project Dependencies
 RUN wget https://raw.githubusercontent.com/raydvard/startup-actionherojs/master/package.json
 RUN wget https://raw.githubusercontent.com/raydvard/startup-actionherojs/master/docker-entrypoint.sh
+RUN chmod +x docker-entrypoint.sh
 RUN npm install
 
 # Production Environment Mode
@@ -19,8 +20,5 @@ RUN npm install
 # Exposing Container Ports
 EXPOSE 8080 5000
 
-# Setting the permission
-RUN chmod +x /docker-entrypoint.sh
-
 # Git Repository Initialization & Start The Application
-ENTRYPOINT ["/docker-entrypoint.sh"]
+ENTRYPOINT ["docker-entrypoint.sh"]
